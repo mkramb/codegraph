@@ -16,3 +16,6 @@ Thumbs.db
 
 # environments
 .env
+
+# binary
+./codegraph
