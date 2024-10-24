@@ -1,6 +1,6 @@
 class HandlerConsumer {
-  // @code-graph-node/handler-consumer
-  // @code-graph-edge/handler-consumer,gateway
+  // @code-graph-label/handler-consumer
+  // @code-graph-link/handler-consumer,gateway
   execute() {
     console.log("Execute HandlerConsumer");
   }
