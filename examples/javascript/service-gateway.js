@@ -1,5 +1,5 @@
 class Gateway {
-  // @code-graph-label/gateway
+  // @code-graph-node/gateway
   execute() {
     console.log("Execute Gateway");
   }
