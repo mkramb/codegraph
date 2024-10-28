@@ -9,8 +9,11 @@ task --list-all
 task compile
 ```
 
-Examples:
+Example usage:
+
+- find all files in example folder
+- pass them all codegraph binary
 
 ```
-./codegraph
+find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq
 ```
