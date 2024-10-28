@@ -20,5 +20,5 @@ Thumbs.db
 # binary
 /codegraph
 
-# example data
-/web/visualizer/data.json
+# examples data
+/web/visualizer/public/data.json

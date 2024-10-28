@@ -10,9 +10,11 @@ Example usage:
 
 - find all files in example folder
 - pass them all to codegraph binary
+- lastly, load visualizer in the browser
 
 ```
 task examples-generate
+task examples-visualizer
 ```
 
 Will generate file as:

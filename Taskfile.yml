@@ -23,5 +23,11 @@ tasks:
 
   examples-generate:
     cmds:
-      - rm -fr ./web/visualizer/data.json
-      - find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq > ./web/visualizer/data.json
+      - rm -fr ./web/visualizer/public/data.json
+      - find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq > ./web/visualizer/public/data.json
+
+  examples-visualizer:
+    cmds:
+      - ( cd ./web/visualizer && pnpm dev )
+
+    
