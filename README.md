@@ -15,10 +15,10 @@ Example usage:
 - pass them all to codegraph binary
 
 ```
-find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq
+task generate-examples
 ```
 
-Will output as:
+Will generate file as:
 
 ```
 [

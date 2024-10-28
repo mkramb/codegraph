@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 tasks:
   lint:
@@ -13,3 +13,7 @@ tasks:
     deps: [compile]
     cmds:
       - go run cmd/codegraph/main.go
+
+  generate-examples:
+    cmds:
+      - find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq > ./web/visualizer/data.json
