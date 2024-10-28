@@ -1,18 +1,59 @@
 import React from "react"
-import { ReactFlow } from "@xyflow/react"
+import { GraphCanvas } from "reagraph"
 
-import "@xyflow/react/dist/style.css"
+interface DataItem {
+  type: "label" | "link"
+  value: string
+  filepath: string
+  position: {
+    row: number
+    column: number
+  }
+}
 
-const initialNodes = [
-  { id: "1", position: { x: 0, y: 0 }, data: { label: "1" } },
-  { id: "2", position: { x: 0, y: 100 }, data: { label: "2" } },
-]
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }]
+interface Node {
+  id: string
+  label: string
+}
 
-export const GraphComponent: React.FC = () => {
-  return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <ReactFlow nodes={initialNodes} edges={initialEdges} />
-    </div>
-  )
+interface Edge {
+  source: string
+  target: string
+  id: string
+  label: string
+}
+
+export interface GraphComponentProps {
+  data: DataItem[]
+}
+
+export const GraphComponent: React.FC<GraphComponentProps> = ({ data }) => {
+  const parsedNodes: Node[] = []
+  const parsedEdges: Edge[] = []
+
+  const nodeIds = new Set<string>()
+
+  data.forEach((item) => {
+    if (item.type === "label") {
+      if (!nodeIds.has(item.value)) {
+        parsedNodes.push({
+          id: item.value,
+          label: item.value,
+        })
+
+        nodeIds.add(item.value)
+      }
+    } else if (item.type === "link") {
+      const [source, target] = item.value.split(",")
+
+      parsedEdges.push({
+        source,
+        target,
+        id: `${source}-${target}`,
+        label: `${source}-${target}`,
+      })
+    }
+  })
+
+  return <GraphCanvas nodes={parsedNodes} edges={parsedEdges} />
 }

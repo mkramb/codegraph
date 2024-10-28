@@ -33,6 +33,9 @@ Will generate file as:
 ]
 ```
 
+Visiting the visualizer app on http://localhost:3000/:
+![plot](./assets/visualizer.png)
+
 ## Development setup
 
 Install & build:
