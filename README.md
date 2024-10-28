@@ -1,10 +1,10 @@
 # CodeGraph
 
-### Functionality
+## Functionality
 
 The concept is to integrate markers within your codebase to enable the generation of a code graph that maps services and dependencies. This approach can be applied across various programming languages and infrastructure as code. It provides a service map without relying on telemetry, allowing teams to visually understand the actual workings of the code. With this insight, you can deliver new features and implement refactors faster and with fewer bugs.
 
-### Usage
+## Usage
 
 Example usage:
 
