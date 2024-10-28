@@ -1,5 +1,9 @@
 # CodeGraph
 
+### Functionality
+
+...Work in progress...
+
 ### Usage
 
 Compile binary:
