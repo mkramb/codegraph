@@ -2,7 +2,7 @@
 
 ### Functionality
 
-...Work in progress...
+The concept is to integrate markers within your codebase to enable the generation of a code graph that maps services and dependencies. This approach can be applied across various programming languages and infrastructure as code. It provides a service map without relying on telemetry, allowing teams to visually understand the actual workings of the code. With this insight, you can deliver new features and implement refactors faster and with fewer bugs.
 
 ### Usage
 
@@ -17,7 +17,7 @@ task examples-generate
 task examples-visualizer
 ```
 
-Will generate file as:
+Which will generate a file as:
 
 ```
 [
@@ -33,7 +33,7 @@ Will generate file as:
 ]
 ```
 
-Visiting the visualizer app on http://localhost:3000/:
+And visiting the visualizer app on http://localhost:3000/, would render a code graph:
 ![plot](./assets/visualizer.png)
 
 ## Development setup
