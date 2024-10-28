@@ -1,6 +1,13 @@
 version: "3"
 
 tasks:
+  setup-pnpm:
+    desc: Will clean the repo node_modules and configure pnpm using corepack
+    cmds:
+      - find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+      - COREPACK_ENABLE_STRICT=0 && corepack enable && corepack prepare pnpm@9.9.0 --activate
+      - pnpm i
+
   lint:
     cmds:
       - golangci-lint run --fast
@@ -14,6 +21,7 @@ tasks:
     cmds:
       - go run cmd/codegraph/main.go
 
-  generate-examples:
+  examples-generate:
     cmds:
+      - rm -fr ./web/visualizer/data.json
       - find ./examples/ -type f -name "*.js" | xargs ./codegraph | jq > ./web/visualizer/data.json

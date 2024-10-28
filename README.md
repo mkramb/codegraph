@@ -6,20 +6,13 @@
 
 ### Usage
 
-Compile binary:
-
-```
-task --list-all
-task compile
-```
-
 Example usage:
 
 - find all files in example folder
 - pass them all to codegraph binary
 
 ```
-task generate-examples
+task examples-generate
 ```
 
 Will generate file as:
@@ -36,4 +29,19 @@ Will generate file as:
     }
   }, ...
 ]
+```
+
+## Development setup
+
+Install & build:
+
+```
+task setup-pnpm
+task compile
+```
+
+To list all tasks:
+
+```
+task --list-all
 ```

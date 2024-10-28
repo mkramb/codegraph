@@ -1,0 +1,6 @@
+{
+  "name": "codegraph",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.9.0"
+}
