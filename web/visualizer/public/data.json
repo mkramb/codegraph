@@ -1,0 +1,164 @@
+[
+  {
+    "type": "label",
+    "value": "send-email",
+    "filepath": "./examples/service-handler-send-email.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "user-registration,send-email",
+    "filepath": "./examples/service-handler-send-email.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "send-email",
+    "filepath": "./examples/service-handler-send-email.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "user-registration,send-email",
+    "filepath": "./examples/service-handler-send-email.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "internal-gateway",
+    "filepath": "./examples/service-internal-gateway.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "label",
+    "value": "internal-gateway",
+    "filepath": "./examples/service-internal-gateway.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "label",
+    "value": "analytics-pull",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "analytics-pull,internal-gateway",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "analytics-pull",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "analytics-pull,internal-gateway",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "analytics-push",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 10,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "internal-gateway,analytics-push",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 11,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "analytics-push",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 10,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "internal-gateway,analytics-push",
+    "filepath": "./examples/service-handler-analytics.js",
+    "position": {
+      "row": 11,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "user-registration",
+    "filepath": "./examples/service-handler-user-registration.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "internal-gateway,user-registration",
+    "filepath": "./examples/service-handler-user-registration.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  },
+  {
+    "type": "label",
+    "value": "user-registration",
+    "filepath": "./examples/service-handler-user-registration.js",
+    "position": {
+      "row": 2,
+      "column": 3
+    }
+  },
+  {
+    "type": "link",
+    "value": "internal-gateway,user-registration",
+    "filepath": "./examples/service-handler-user-registration.js",
+    "position": {
+      "row": 3,
+      "column": 1
+    }
+  }
+]
