@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 
 	sitter "github.com/smacker/go-tree-sitter"
@@ -26,6 +27,10 @@ var queryStr = `
 (
 	(comment) @comment
 	(#match? @comment "// @code-graph-(label|link)/.+")
+)
+(
+	(comment) @comment
+	(#match? @comment "/\\*([\\s\\S]*?)@code-graph-(label|link)/[\\s\\S]*?\\*/")
 )
 `
 
@@ -88,6 +93,7 @@ func extractMatches(rootNode *sitter.Node, content []byte, filePath string, lang
 	qc.Exec(q, rootNode)
 
 	var results []MatchInfo
+	re := regexp.MustCompile(`@code-graph-(label|link)/([^\s*/]+)`)
 
 	for {
 		match, ok := qc.NextMatch()
@@ -99,22 +105,30 @@ func extractMatches(rootNode *sitter.Node, content []byte, filePath string, lang
 			commentContent := capture.Node.Content(content)
 			startPosition := capture.Node.StartPoint()
 
-			parts := strings.Split(strings.TrimPrefix(commentContent, "// @code-graph-"), "/")
+			lines := strings.Split(commentContent, "\n")
 
-			if len(parts) != 2 {
-				continue
+			for _, line := range lines {
+				line = strings.TrimSpace(line)
+				matches := re.FindStringSubmatch(line)
+
+				if len(matches) < 3 {
+					continue
+				}
+
+				matchInfo := MatchInfo{
+					Type:     matches[1],
+					Value:    matches[2],
+					FilePath: filePath,
+				}
+
+				matchInfo.Position.Row = int(startPosition.Row + 1)
+				matchInfo.Position.Column = int(startPosition.Column + 1)
+
+				results = append(results, matchInfo)
+
+				startPosition.Row++
+				startPosition.Column = 0
 			}
-
-			matchInfo := MatchInfo{
-				Type:     parts[0],
-				Value:    parts[1],
-				FilePath: filePath,
-			}
-
-			matchInfo.Position.Row = int(startPosition.Row + 1)
-			matchInfo.Position.Column = int(startPosition.Column + 1)
-
-			results = append(results, matchInfo)
 		}
 	}
 
